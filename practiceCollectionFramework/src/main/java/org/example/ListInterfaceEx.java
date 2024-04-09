@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 class Student{
@@ -28,6 +29,13 @@ public class ListInterfaceEx {
         for (int i=0;i<studentList.size();i++)
         {
             System.out.println("ID:- "+studentList.get(i).id+"  Name:- "+studentList.get(i).name+"  Percentage:- "+studentList.get(i).percent);
+        }
+        Iterator<Student> iterator=studentList.iterator();
+        System.out.println("\n\nIterate using Iterator:\n\n");
+        while (iterator.hasNext())
+        {   Student student=iterator.next();
+            System.out.println("ID:- "+student.id
+            +"  Name:- "+student.name+" Percentage:- "+student.percent);
         }
     }
 }
