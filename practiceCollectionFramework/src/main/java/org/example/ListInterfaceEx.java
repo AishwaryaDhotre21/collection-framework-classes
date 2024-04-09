@@ -1,7 +1,9 @@
 package org.example;
 
-import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+    import java.util.concurrent.CopyOnWriteArrayList;
 
 class Student{
      int id;
@@ -17,8 +19,6 @@ class Student{
 public class ListInterfaceEx {
     public static void main(String args[])
     {
-        //ArrayList Class Example
-        System.out.println("\n\nArrayList example: \n\n");
         List<Student> studentList=new ArrayList<>();
         studentList.add(new Student(1,"Aishu",99.99F));
         studentList.add(new Student(2,"Leela",93.2F));
@@ -79,14 +79,5 @@ public class ListInterfaceEx {
         studentList1.stream().forEach(student -> {
             System.out.println(student.id+"  "+student.name+"  "+student.percent);
         });
-
-
-        //LinkedList Example
-        System.out.println("\n\nLinkedList example: \n\n");
-        List<Object> list=new LinkedList<>(Arrays.asList(1,"Aishu",3.5F));
-        list.forEach(obj->{
-            System.out.println(obj);
-        });
-
     }
 }
