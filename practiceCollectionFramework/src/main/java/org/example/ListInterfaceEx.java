@@ -88,5 +88,68 @@ public class ListInterfaceEx {
             System.out.println(obj);
         });
 
+        //Vector Example
+        System.out.println("\n\nVector Example: \n\n");
+        List<Integer> vect=new Vector<>(Arrays.asList(1,3,2,4,0,5,8,1,2,7,4));
+        System.out.println("\n\nVector Traversal techniques:-");
+
+        System.out.println("\n\n1: Vector Data:-"+vect);
+        System.out.println("\n\n2: Vector Data:-\n\n");
+
+        for (Integer i:vect)
+        {
+            System.out.print(i+" ");
+        }
+
+        System.out.println("\n\n3: Vector Data:-\n\n");
+
+        for (int i=0;i<vect.size();i++)
+        {
+            System.out.print(vect.get(i)+" ");
+        }
+
+        System.out.println("\n\n4: Vector Data:-\n\n");
+
+        for (Iterator<Integer> i=vect.iterator(); i.hasNext();)
+        {
+            System.out.print(i.next()+" ");
+        }
+        System.out.println("\n\n5: Vector Data:-\n\n");
+
+        Iterator i=vect.iterator();
+        while (i.hasNext())
+        {
+            int data=(Integer) i.next();
+            System.out.print(data+" ");
+        }
+
+        System.out.println("\n\n6: Vector Data:-\n\n");
+        vect.forEach(e ->{
+            System.out.print(e+" ");
+        });
+
+        System.out.println("\n\n7: Vector Data:-\n\n");
+        vect.stream().forEach(e ->{
+            System.out.print(e+" ");
+        });
+
+        System.out.println("\n\nTraverse list in reverse direction:\n\n");
+        ListIterator<Integer> backIterator=vect.listIterator();
+        while (backIterator.hasNext())
+        {
+            int index=backIterator.nextIndex();
+            int data= backIterator.next();
+            System.out.print("Index:-"+index);
+            System.out.print(" Data:-"+data +"   ");
+        }
+        System.out.println("\n\nReverse order:\n\n");
+        while (backIterator.hasPrevious())
+        {
+            int index=backIterator.previousIndex();
+            int data= backIterator.previous();
+            System.out.print("Index:-"+index);
+            System.out.print(" Data:-"+data +"   ");
+        }
+
     }
 }
